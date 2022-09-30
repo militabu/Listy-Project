@@ -24,7 +24,7 @@ const posts = {
   deletePost: async (req: Request, res: Response) => {
     try {
       const result = await Post.findByIdAndDelete(req.params.id);
-      res.status(204).send({result});
+      res.status(204).send(result);
     } catch (error) {
       res.status(401).json(error);
     }
