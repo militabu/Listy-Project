@@ -9,30 +9,30 @@ interface IResponse extends Response {
     rating: string;
     genre: string;
     image: string;
-    likes: [];
+    likes: number;
     _id: string;
     __v: number;
   };
 }
 
-describe("Test the root path", () => {
-  test("It should respond to the GET method and get user", (done) => {
-    request(app)
-      .get("/api/users/113821008080613850752")
-      .then((response: Response) => {
-        expect(response.statusCode).toBe(200);
-        done();
-      });
-  });
-  test("It should respond to the POST method and post a post", (done) => {
-    request(app)
-      .delete("/api/posts/post/delete/6335cbffd99c56b6919657c6")
-      .then((response: Response) => {
-        expect(response.statusCode).toBe(204);
-        done();
-      });
-  });
-});
+interface IPosts extends Response {
+  _body: [IPost]
+}
+
+interface IPost {
+  userId: string;
+  name: string;
+  rating: string;
+  genre: string;
+  image: string;
+  likes: number;
+  _id: string;
+  __v: number;
+}
+
+let mockUserId = ''
+let mockName = ''
+let mock_id = ''
 
 describe("Posts", () => {
   test("It should be able to create posts and get posts and delete posts", (done) => {
@@ -46,20 +46,35 @@ describe("Posts", () => {
         image: { base64: "200302002020" },
       })
       .then((response: IResponse) => {
+        mockUserId = response._body.userId;
+        mockName = response._body.name;
+        mock_id = response._body._id;
         expect(response.statusCode).toBe(201);
-        request(app)
-          .get(`/api/posts/${response._body._id}`)
-          .then((response: IResponse) => {
-            expect(response.statusCode).toBe(200);
-            request(app)
-              .delete("/api/posts/post/delete/6335cbffd99c56b6919657c6")
-              .then((response: Response) => {
-                expect(response.statusCode).toBe(204);
-                done();
-              });
-          });
-
         done();
       });
   });
+  test("It should be able to then get all posts from user", (done) => {
+    request(app)
+      .get(`/api/posts/mainfeed/${mockUserId}`)
+      .then((response: IPosts) => {
+        let flag = false;
+        response._body.forEach((el) => {
+          if (el.name == mockName) flag = true;
+        });
+        expect(flag).toBe(true);
+        done();
+      });
+  });
+
+  test("It should be able to delete posts by ID", (done) => {
+    request(app)
+      .delete(`/api/posts/post/delete/${mock_id}`)
+      .then((response: IResponse) => {
+        expect(response.statusCode).toBe(204);
+        done();
+      })
+  })
+
+
+
 });
