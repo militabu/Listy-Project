@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import React, { FunctionComponent } from 'react'
 // import { useAuth0 } from '@auth0/auth0-react'
 
 interface IProps {

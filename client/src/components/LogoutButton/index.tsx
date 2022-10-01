@@ -1,5 +1,5 @@
 // import { useAuth0 } from '@auth0/auth0-react'
-import { FunctionComponent } from 'react'
+import React, { FunctionComponent } from 'react'
 
 interface IProps {
   isAuthenticated: boolean,
