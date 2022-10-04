@@ -1,6 +1,7 @@
-import { FunctionComponent } from 'react'
-// import { Link, useMatch, useResolvedPath } from 'react-router-dom'
+import React, { FunctionComponent } from 'react'
+import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 import {CustomLink} from '../CustomLink/index';
+
 // import { useAuth0 } from '@auth0/auth0-react'
 
 interface IProps {
