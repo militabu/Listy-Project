@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import React, { FunctionComponent } from 'react'
 // import { useAuth0 } from '@auth0/auth0-react'
 import LoginButton from '../LoginButon'
 import SignUpButton from '../SignUpButton';
@@ -9,9 +9,10 @@ interface IProps {
   isLoading: boolean,
   isAuthenticated: boolean,
   loginWithRedirect: Function,
+  loginWithPopup: Function,
  }
 
-export const LoginPage: FunctionComponent<IProps> = ({isLoading, isAuthenticated, loginWithRedirect}) => {
+export const LoginPage: FunctionComponent<IProps> = ({isLoading, isAuthenticated, loginWithRedirect, loginWithPopup}) => {
   // const { isLoading, isAuthenticated } = useAuth0();
   if (isLoading) {
     return <div>Loading...</div>
@@ -22,8 +23,8 @@ export const LoginPage: FunctionComponent<IProps> = ({isLoading, isAuthenticated
       { !isAuthenticated ? (
         <div className='login-page'>
           <img className='black-listy-logo' src={blackListyLogo} />
-          <LoginButton isAuthenticated={isAuthenticated} loginWithRedirect={loginWithRedirect}/>
-          <SignUpButton isAuthenticated={isAuthenticated} loginWithRedirect={loginWithRedirect}/>
+          <LoginButton isAuthenticated={isAuthenticated} loginWithRedirect={loginWithRedirect} loginWithPopup={loginWithPopup}/>
+          <SignUpButton isAuthenticated={isAuthenticated} loginWithRedirect={loginWithRedirect} loginWithPopup={loginWithPopup}/>
         </div>
       ) : (
         null

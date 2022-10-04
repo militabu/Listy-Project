@@ -1,3 +1,4 @@
+import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react'
 import Profile from '../Profile';
 import { LoginPage } from '../LoginPage';
@@ -9,7 +10,7 @@ import { SearchPage } from '../SearchPage';
 
 
 export const Main = () => {
-  const { isLoading, isAuthenticated, logout, loginWithRedirect, getAccessTokenSilently, getAccessTokenWithPopup, user } = useAuth0();
+  const { isLoading, isAuthenticated, logout, loginWithPopup, loginWithRedirect, getAccessTokenSilently, getAccessTokenWithPopup, user } = useAuth0();
 
   return (
     <BrowserRouter>
@@ -18,7 +19,7 @@ export const Main = () => {
       </nav>
       <section className='main-content'>
         <Routes>
-          <Route path='/' element={<LoginPage isLoading={isLoading} isAuthenticated={isAuthenticated} loginWithRedirect={loginWithRedirect} />} />
+          <Route path='/' element={<LoginPage isLoading={isLoading} isAuthenticated={isAuthenticated} loginWithRedirect={loginWithRedirect} loginWithPopup={loginWithPopup} />} />
           <Route path='/register' element='' />
           <Route path='/profile/:username' element='' />
           <Route path='/mainfeed' element={<MainFeed />} />
@@ -26,7 +27,7 @@ export const Main = () => {
          <Route path='/profile' element={<Profile user={user} isAuthenticated={isAuthenticated} getAccessTokenSilently={getAccessTokenSilently} getAccessTokenWithPopup={getAccessTokenWithPopup} />} />
          </Routes>
       </section>
-      <footer className='nav-bottom'><Navbar isAuthenticated={isAuthenticated} to ={''} children ={<></>} /></footer>
+      <footer className='nav-bottom'><Navbar isAuthenticated={isAuthenticated} /></footer>
     </BrowserRouter>
   )
 }

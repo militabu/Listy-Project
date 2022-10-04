@@ -1,4 +1,4 @@
-import { useState, useEffect, FormEvent, FunctionComponent } from 'react'
+import React, { useState, useEffect, FormEvent, FunctionComponent } from 'react'
 import './Add.css';
 // import { useAuth0 } from '@auth0/auth0-react'
 import { IPost } from '../componentTypes';
@@ -69,7 +69,7 @@ export const Add: FunctionComponent<IProps>  = ({getAccessTokenSilently, getAcce
     <div>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet"></link>
-      <div data-testid ='addPop' className='addPopup' onClick={() => setPopupActive(true)}><img className='add-logo' src='https://icons.veryicon.com/png/o/object/material-design-icons/add-49.png' /></div>
+      <button data-testid ='addPop' style={{zIndex: '20'}} className='addPopup' onClick={() => setPopupActive(true)}><img className='add-logo' src='https://icons.veryicon.com/png/o/object/material-design-icons/add-49.png' /></button>
       {popupActive ? (
         <div className='popup'>
           <div className='modal-content'>
