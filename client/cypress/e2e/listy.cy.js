@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 <reference types="cypress" />
-import React from 'react';
+// import React from 'react';
 
 describe('Listy App Legacy Refactor', () => {
   beforeEach(() => {
