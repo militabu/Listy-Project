@@ -26,7 +26,7 @@ export const Main = () => {
          <Route path='/profile' element={<Profile user={user} isAuthenticated={isAuthenticated} getAccessTokenSilently={getAccessTokenSilently} getAccessTokenWithPopup={getAccessTokenWithPopup} />} />
          </Routes>
       </section>
-      <footer className='nav-bottom'><Navbar isAuthenticated={isAuthenticated} to ={''} children ={<></>} /></footer>
+      <footer className='nav-bottom'><Navbar isAuthenticated={isAuthenticated} /></footer>
     </BrowserRouter>
   )
 }
