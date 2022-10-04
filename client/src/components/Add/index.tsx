@@ -102,13 +102,17 @@ export const Add: FunctionComponent<IProps>  = ({getAccessTokenSilently, getAcce
           <div className='image-and-post' key={post._id}>
             <img className='post-image' src={post.image} />
             <section className='post-container'>
-              <h1 className='post-name'>{post.name}</h1>
-              <p className='post-rating'>{post.rating}</p>
-              <p className='post-genre'>{post.genre}</p>
-              <button className='delete-button' onClick={() => removePost(post._id)}>X</button>
+              <div className='info-stack'>
+                <h1 className='post-name'>{post.name}</h1>
+                <p className='post-rating'>{post.rating}</p>
+                <p className='post-genre'>{post.genre}</p>
+                <button className='delete-button' onClick={() => removePost(post._id)}>X</button>
+              </div>
+              <div className='button-stack'>
+                <button className='like-button' onClick={() => votePost('true', post._id)}>Like!</button>
+                <button className='dislike-button' onClick={() => votePost('false', post._id)}>Dislike!</button>
+              </div>
             </section>
-            <button className='like-button' onClick={() => votePost('true', post._id)}>Like!</button>
-            <button className='dislike-button' onClick={() => votePost('false', post._id)}>Dislike!</button>
           </div>
         ))}
       </section>

@@ -170,24 +170,24 @@ label {
     min-width: 60vw;
     max-width: 60vw;
     background-color: #eaf4f4;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     z-index: 1;
 }
 
 
 .post-name {
     font-size: clamp(1rem, 5vw, 2rem);
-    margin: 10px;
+    margin: 5px;
 }
 
 .post-rating {
     height: fit-content;
-    margin: 10px;
+    margin: 5px;
 }
 
 .post-genre {
     height: fit-content;
-    margin: 10px;
+    margin: 5px;
 }
 
 
@@ -210,7 +210,7 @@ label {
 }
 
 .delete-button{
-    position: absolute;
+    position: flex;
     border: none;
     outline: none;
     background-color: transparent;
@@ -220,4 +220,33 @@ label {
     font-size: larger;
 }
 
+.post-container{
+    display: flex;
+    flex-direction: row;
+}
 
+.info-stack{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 70%;
+}
+
+.button-stack{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 25%;
+    align-items: center;
+    justify-content: center;
+}
+
+.like-button{
+    width: 60%;
+    margin: 5px;
+}
+
+.dislike-button{
+    width: 60%;
+    margin: 5px;
+}
