@@ -36,6 +36,7 @@ body.active-modal {
 form {
     display: flex;
     position: fixed;
+    margin-top: 80px;
     bottom: 28%;
     z-index: 100;
 }
@@ -52,6 +53,14 @@ form {
     border-radius: 5%;
 }
 
+.all-inputs{
+  max-height:400px;
+}
+
+.all-inputs > * {
+  max-height: 30px;
+}
+
 
 
 .upload {
@@ -62,7 +71,7 @@ form {
     width: 50vw;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15%;
+    margin-bottom: 5%;
     border-radius: 10px;
 
 }
