@@ -18,7 +18,7 @@ export const LoginPage: FunctionComponent<IProps> = ({isLoading, isAuthenticated
   }
 
   return (
-    <div>
+    <div className='login-container'>
       { !isAuthenticated ? (
         <div className='login-page'>
           <img className='black-listy-logo' src={blackListyLogo} />

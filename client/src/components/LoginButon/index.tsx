@@ -9,7 +9,7 @@ interface IProps {
 const LoginButton: FunctionComponent<IProps> = ({ isAuthenticated, loginWithRedirect}) => {
   // const { loginWithRedirect, isAuthenticated } = useAuth0();
   return (
-    <div>
+    <div className='container'>
       { !isAuthenticated ? (
         <button className='login-button' onClick={() => loginWithRedirect()}>
           Log In
