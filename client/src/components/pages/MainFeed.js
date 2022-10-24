@@ -27,7 +27,7 @@ export const MainFeed = () => {
 
             setPosts(res.data);
 
-            console.log(res)
+            // console.log(res)
         };
 
         fetchPosts();

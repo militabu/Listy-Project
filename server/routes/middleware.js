@@ -14,12 +14,12 @@ const checkJwt = auth({
 const checkJwt2 = async (req, res, next) => {
     req.auth.userId = req.auth.payload.sub.split("|")[1]
     // req.auth.userId is the userId
-    console.log(req.auth.userId)
+    // console.log(req.auth.userId)
 
     //check if user is in the data base
-    console.log(req.auth.userId)
+    // console.log(req.auth.userId)
     let user = await User.findById(req.auth.userId)
-    console.log(user)
+    // console.log(user)
     if (!user) {
         console.log('auth0 user does not exsist in local database, creating...')
         const newUser = new User({ _id: req.auth.userId });
