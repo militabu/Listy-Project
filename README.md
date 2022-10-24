@@ -17,6 +17,9 @@ Listy is a social media app that allows you to share movies you have watched wit
 3. Fill in the ``.env`` file with the environmental variables, as per the ``.env-example`` file in the ``server`` folder
 4. Run ``npm start`` from the *server root folder* to start the server app at ``http://localhost:3030/``
 
+## IMPORTANT
+The app is design to be viewed in mobile view
+
 ## TECH STACKS
 * **Frontend** - React 
 * **Server** - Node & Express
