@@ -2,6 +2,8 @@
 ## ABOUT
 Listy is a social media app that allows you to share movies you have watched with your friends.
 
+<img width="1223" alt="Screen Shot 2022-10-24 at 11 00 37 am" src="https://user-images.githubusercontent.com/105465111/197490053-9e7f225e-4894-450d-ba41-c8b92417e91c.png">
+
 ## HOW TO START THE APP IN LOCAL ENVIRONMENT
 ### Client
 1. Go to the ``client`` folder
