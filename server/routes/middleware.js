@@ -14,7 +14,7 @@ const checkJwt = auth({
 const checkJwt2 = async (req, res, next) => {
     req.auth.userId = req.auth.payload.sub.split("|")[1]
     // req.auth.userId is the userId
-    // console.log(req.auth.userId)
+    console.log(req.auth.userId)
 
     //check if user is in the data base
     console.log(req.auth.userId)

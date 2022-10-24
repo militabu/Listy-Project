@@ -18,7 +18,7 @@ router.post('/', [checkJwt, checkJwt2],  async (req, res) =>{
     });
     //TODO: add error handling
     await post.save();
-    console.log(req.body)
+    // console.log(req.body)
     res.status(201).json(post);
   } catch (error) {
     console.log(error)

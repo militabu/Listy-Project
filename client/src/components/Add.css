@@ -144,11 +144,24 @@ label {
     display: flex;
     position: fixed;
     flex-direction: column;
-    height: 64vh;
+    height: 86vh;
     width: 100vw;
     left: 0;
-    bottom: 11%;
+    bottom: 7%;
     overflow-y: scroll;
+    background-color: black;
+}
+
+.profile-posts-container{
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    height: 47vh;
+    width: 100vw;
+    left: 0;
+    bottom: 4%;
+    overflow-y: scroll;
+    /* background-color: blue; */
 }
 
 .image-and-post{
@@ -156,22 +169,38 @@ label {
 }
 
 .post-image {
-    height:12vh;
-    width:17vh;
+    min-height: 18vh;
+    max-height: 18vh;
+    min-width: 50vw;
+    max-width: 50vw;
     background-size: cover;
     margin-left: 8px;
     margin-bottom: 8px;
-    margin-right: 5px;
+    border-radius: 15px 0px 0px 15px ;
 }
 
 .post-container {
-    min-height: 12vh;
-    max-height: 12vh;
-    min-width: 60vw;
+    position: relative;
+    min-height: 18vh;
+    max-height: 18vh;
+    width: 60vw; 
     max-width: 60vw;
-    background-color: #eaf4f4;
+    background-color: rgb(255, 255, 255);
     margin-bottom: 30px;
+    margin-right: 8px;
     z-index: 1;
+    border-radius: 0px 15px 15px 0px;
+}
+
+.delete-button{
+    border: 0;
+    background: white;
+    position: absolute;
+}
+
+.delete-button{
+    margin-left: 150px;
+    margin-top: 20px;
 }
 
 
@@ -209,7 +238,7 @@ label {
     color: rgba(0, 0, 0, 0);
 }
 
-.delete-button{
+/* .delete-button{
     position: absolute;
     border: none;
     outline: none;
@@ -218,6 +247,25 @@ label {
     margin-left: 210px;
     margin-top: -20px;
     font-size: larger;
+} */
+
+/* .test{
+    height: 500px;
+    width: 500px;
+    background-color: red;
+} */
+
+.addPopup{
+    /* background-color: red; */
+    position: fixed;
+    left: 30%;
+    top: 15%;
+    /* z-index: 10000 */
+
 }
 
 
+.add-logo{
+    height: 100px;
+    color: white;
+}

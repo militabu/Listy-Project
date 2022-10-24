@@ -2,17 +2,21 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react'
+import { useNavigate } from 'react-router-dom';
+
 
 
 
 
 export const MainFeed = () => {
 
-    const { getAccessTokenSilently } = useAuth0();
+    const { getAccessTokenSilently, isAuthenticated } = useAuth0();
 
     const [posts, setPosts] = useState([])
 
     const postsBaseUrl = 'http://localhost:3030/api/posts'
+
+    // navigate = useNavigate()
 
 
     //HAVE TO MAKE THIS DYNAMIC
@@ -57,8 +61,8 @@ export const MainFeed = () => {
 
 
     return (
+        <>
         <main>
-            <h1 className='mainfeed-title'>MainFeed</h1>
 
             <section className='posts-container'>
                 {posts.map(post => (
@@ -73,5 +77,6 @@ export const MainFeed = () => {
                 ))}
             </section>
         </main>
+                </>
     )
 }

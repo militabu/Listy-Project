@@ -1,42 +1,56 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
+import { BottomNavigation, BottomNavigationAction } from '@mui/material';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
+import MovieFilterIcon from '@mui/icons-material/MovieFilter';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import AddIcon from '@mui/icons-material/Add';
+import { Add } from './Add'
 
 
 export const Navbar = () => {
 
     const { isAuthenticated } = useAuth0();
 
+
     return (
         isAuthenticated && (
+            <>
+                <BottomNavigation
+                    sx={{
+                        width: '100%', position: 'fixed', bottom: 0, background: 'black', ".MuiBottomNavigationAction-root, .Mui-selected, svg": {
+                            color: "white"
+                        }
+                    }}>
+                    <BottomNavigationAction label='' icon={<MovieFilterIcon fontSize='large'/>} component={Link} to='/mainfeed' />
+                    <BottomNavigationAction label='' icon={<SearchIcon fontSize='large' />} component={Link} to='/search' />
+                    {/* <BottomNavigationAction label='' icon={<AddCircleIcon fontSize='large' />} /> */}
+                    {/* <BottomNavigationAction label='' icon={<Add />} /> */}
+                    <BottomNavigationAction label='' icon={<MenuIcon fontSize='large'/>} />
+                    <BottomNavigationAction label='' icon={<AccountCircleIcon fontSize='large'/>} component={Link} to='/profile' />
+                </BottomNavigation>
+            </>
 
-            <nav className='nav'>
-
-                <CustomLink to='/mainfeed'><img className='feed-logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/640px-Hamburger_icon.svg.png' /></CustomLink>
-                <CustomLink to='/profile'><img className='profile-logo' src='http://cdn.onlinewebfonts.com/svg/img_24787.png' /></CustomLink>
-                <CustomLink to='/search'><img className='search-logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png' /></CustomLink>
-
-                {/* <CustomLink to='/add'><img className='add-logo' src='https://icons.veryicon.com/png/o/object/material-design-icons/add-49.png'/></CustomLink> */}
-        
-            </nav>
         )
     )
 }
 
 
+// function CustomLink({ to, children, ...props }) {
+//     //
+//     const resolvedPath = useResolvedPath(to);
+//     // end: true says that the entire path must match
+//     const isActive = useMatch({ path: resolvedPath.pathname, end: true })
 
-function CustomLink({ to, children, ...props }) {
-    //
-    const resolvedPath = useResolvedPath(to);
-    // end: true says that the entire path must match
-    const isActive = useMatch({ path: resolvedPath.pathname, end: true })
+//     return (
+//         <div className={isActive ? 'active' : ''}>
+//             <Link to={to} {...props}>
+//                 {children}
+//             </Link>
+//         </div>
+//     )
 
-    return (
-        <div className={isActive ? 'active' : ''}>
-            <Link to={to} {...props}>
-                {children}
-            </Link>
-        </div>
-    )
-
-}
+// }

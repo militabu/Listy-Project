@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import './Add.css'
 import FileBase64 from 'react-file-base64';
 import { useAuth0 } from '@auth0/auth0-react'
+import DeleteIcon from '@mui/icons-material/Delete';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 
 export const Add = () => {
@@ -106,7 +108,7 @@ export const Add = () => {
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
                 rel="stylesheet"></link>
 
-            <div className='addPopup' onClick={() => setPopupActive(true)}><img className='add-logo' src='https://icons.veryicon.com/png/o/object/material-design-icons/add-49.png' /></div>
+            <div className='addPopup' onClick={() => setPopupActive(true)}><AddCircleIcon className='add-logo' fontSize='medium'/></div>
 
             {popupActive ? (
                 <div className='popup'>
@@ -151,7 +153,7 @@ export const Add = () => {
 
             ) : ''}
 
-            <section className='posts-container'>
+            <section className='profile-posts-container'>
                 {posts.map(post => (
                     <div className='image-and-post' key={post._id}>
                         <img className='post-image' src={post.image} />
@@ -159,7 +161,7 @@ export const Add = () => {
                             <h1 className='post-name'>{post.name}</h1>
                             <p className='post-rating'>{post.rating}</p>
                             <p className='post-genre'>{post.genre}</p>
-                            <button className='delete-button' onClick={() => deletePost(post._id)}>X</button>
+                            <button className='delete-button' onClick={() => deletePost(post._id)}>{<DeleteIcon className='delete-icon' fontSize='small'/>}</button>
                         </section>
                     </div>
                 ))}

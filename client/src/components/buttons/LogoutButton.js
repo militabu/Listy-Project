@@ -1,4 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react'
+import LogoutIcon from '@mui/icons-material/Logout';
+import { IconButton } from '@mui/material'
+
 
 const LogoutButton = () => {
 
@@ -7,7 +10,7 @@ const LogoutButton = () => {
         isAuthenticated && (
 
             <button className='logout-button' onClick={() => logout()}>
-                Logout
+                {<LogoutIcon className='logout-icon' />}
             </button>
 
         )
