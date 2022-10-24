@@ -20,8 +20,22 @@ const Profile = () => {
                     <button className='friends-button'>{<PeopleIcon className='friends-icon' />}</button>
                 </section>
                 <article className='fave-container'>
-                    <section className='fave-movie'>Favorite Movies</section>
-                    <section className='fave-tv'>Favorite TV Shows</section>
+                    <section className='fave-movie'>
+                        <h4 className='fave-h4'>Favorite Movies</h4>
+                        <ul className='fave-movie-list'>
+                            <li>Catch me if you can</li>
+                            <li>Parasite</li>
+                            <li>Bohemian Rhapsody</li>
+                        </ul>
+                    </section>
+                    <section className='fave-tv'>
+                        <h4 className='fave-h4'>Favorite TV Shows</h4>
+                        <ul className='fave-movie-list'>
+                            <li>You</li>
+                            <li>The Vampire Diaries</li>
+                            <li>The Good Place</li>
+                        </ul>
+                    </section>
                 </article>
                 <h2 className='history-profile'>history</h2>
                 <section className='test'><Add /></section>

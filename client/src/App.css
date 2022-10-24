@@ -162,32 +162,45 @@
   height: 20vh;
   top: 22%;
   right: 5%;
-  /* justify-content: center; */
+  /* justify-content: space-between; */
 }
 
 .fave-movie{
-  /* background: blue; */
-  text-align: center;
+  background: white;
+  border-radius: 15%;
+  /* text-align: center; */
   position: fixed;
-  width: 45vw;
+  width: 44vw;
   height: 20vh;
   font-family: 'Poppins', sans-serif;
-  color: white;
-  font-size: 1rem;
+  color: black;
+  font-size: 0.8rem;
   font-weight: bold;
 }
 
 .fave-tv{
-  /* background: green; */
+  background: white;
+  border-radius: 15%;
   position: fixed;
-  width: 45vw;
+  width: 44vw;
   right: 5%;
   height: 20vh;
   font-family: 'Poppins', sans-serif;
-  color: white;
-  text-align: center;
-  font-size: 1rem;
+  color: black;
+  font-size: 0.8rem;
   font-weight: bold;
+}
+
+.fave-h4{
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.fave-movie-list{
+  /* background: green; */
+  margin-left: 20px;
+  margin-top: 5px;
 }
 
 .history-profile{
